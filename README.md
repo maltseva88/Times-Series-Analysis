@@ -25,4 +25,4 @@ In this exercise, I've test the time-series tools in order to predict future mov
 
 ### Findings:
 
-1. Does this model perform better or worse on out-of-sample data compared to in-sample data?
+1. Does this model perform better or worse on out-of-sample data compared to in-sample data? - Out-of-Sample Performance Root Mean Squared Error (RMSE): 0.4154832784856737 is lower than In-of-Sample Performance Root Mean Squared Error (RMSE): 0.5963660785073426 so Out-of-Sample data are more significant
