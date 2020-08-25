@@ -248,11 +248,13 @@ yen_futures.head()
 # (Make sure to multiply the pct_change() results by 100)
 # In this case, you may have to replace inf, -inf values with np.nan"s
 
-returns = (yen_futures[["Settle"]].pct_change() * 100)
+returns = yen_futures["Settle"].pct_change() * 100
+
 returns = returns.replace(-np.inf, np.nan).dropna()
-yen_futures['Returns']= (yen_futures[["Settle"]].pct_change() * 100)
-yen_futures.dropna(inplace=True)
-yen_futures.head()
+yen_futures['Returns']= returns
+
+returns.dropna(inplace=True)
+yen_futures.tail()
 ```
 
 
@@ -301,64 +303,64 @@ yen_futures.head()
   </thead>
   <tbody>
     <tr>
-      <th>2014-02-18</th>
-      <td>9831.0</td>
-      <td>9865.0</td>
-      <td>9734.0</td>
-      <td>9775.0</td>
-      <td>42.0</td>
-      <td>9775.0</td>
-      <td>203495.0</td>
-      <td>196924.0</td>
-      <td>-0.427829</td>
+      <th>2019-10-09</th>
+      <td>9381.0</td>
+      <td>9391.5</td>
+      <td>9330.5</td>
+      <td>9343.5</td>
+      <td>38.5</td>
+      <td>9338.0</td>
+      <td>99153.0</td>
+      <td>145470.0</td>
+      <td>-0.410601</td>
     </tr>
     <tr>
-      <th>2014-02-19</th>
-      <td>9768.0</td>
-      <td>9825.0</td>
-      <td>9760.0</td>
-      <td>9773.0</td>
-      <td>2.0</td>
-      <td>9773.0</td>
-      <td>129508.0</td>
-      <td>197197.0</td>
-      <td>-0.020460</td>
+      <th>2019-10-10</th>
+      <td>9343.5</td>
+      <td>9380.5</td>
+      <td>9293.5</td>
+      <td>9301.0</td>
+      <td>34.5</td>
+      <td>9303.5</td>
+      <td>159397.0</td>
+      <td>144474.0</td>
+      <td>-0.369458</td>
     </tr>
     <tr>
-      <th>2014-02-20</th>
-      <td>9774.0</td>
-      <td>9837.0</td>
-      <td>9765.0</td>
-      <td>9775.0</td>
-      <td>2.0</td>
-      <td>9775.0</td>
-      <td>160202.0</td>
-      <td>198280.0</td>
-      <td>0.020465</td>
+      <th>2019-10-11</th>
+      <td>9308.5</td>
+      <td>9309.0</td>
+      <td>9240.0</td>
+      <td>9267.0</td>
+      <td>52.5</td>
+      <td>9251.0</td>
+      <td>158810.0</td>
+      <td>147471.0</td>
+      <td>-0.564304</td>
     </tr>
     <tr>
-      <th>2014-02-21</th>
-      <td>9772.0</td>
-      <td>9776.0</td>
-      <td>9725.0</td>
-      <td>9758.0</td>
-      <td>20.0</td>
-      <td>9755.0</td>
-      <td>103091.0</td>
-      <td>202990.0</td>
-      <td>-0.204604</td>
+      <th>2019-10-14</th>
+      <td>9259.0</td>
+      <td>9292.0</td>
+      <td>9250.5</td>
+      <td>9261.0</td>
+      <td>14.0</td>
+      <td>9265.0</td>
+      <td>69457.0</td>
+      <td>153902.0</td>
+      <td>0.151335</td>
     </tr>
     <tr>
-      <th>2014-02-24</th>
-      <td>9752.0</td>
-      <td>9789.0</td>
-      <td>9740.0</td>
-      <td>9757.0</td>
-      <td>2.0</td>
-      <td>9757.0</td>
-      <td>90654.0</td>
-      <td>203114.0</td>
-      <td>0.020502</td>
+      <th>2019-10-15</th>
+      <td>9264.5</td>
+      <td>9280.0</td>
+      <td>9216.5</td>
+      <td>9220.0</td>
+      <td>43.5</td>
+      <td>9221.5</td>
+      <td>108342.0</td>
+      <td>151564.0</td>
+      <td>-0.469509</td>
     </tr>
   </tbody>
 </table>
@@ -374,7 +376,7 @@ yen_futures.head()
 
 yen_futures['Lagged_Return'] = yen_futures.Returns.shift()
 yen_futures.dropna(inplace=True)
-yen_futures.head()
+yen_futures.tail()
 ```
 
 
@@ -425,69 +427,69 @@ yen_futures.head()
   </thead>
   <tbody>
     <tr>
-      <th>2014-02-19</th>
-      <td>9768.0</td>
-      <td>9825.0</td>
-      <td>9760.0</td>
-      <td>9773.0</td>
-      <td>2.0</td>
-      <td>9773.0</td>
-      <td>129508.0</td>
-      <td>197197.0</td>
-      <td>-0.020460</td>
-      <td>-0.427829</td>
+      <th>2019-10-09</th>
+      <td>9381.0</td>
+      <td>9391.5</td>
+      <td>9330.5</td>
+      <td>9343.5</td>
+      <td>38.5</td>
+      <td>9338.0</td>
+      <td>99153.0</td>
+      <td>145470.0</td>
+      <td>-0.410601</td>
+      <td>0.170931</td>
     </tr>
     <tr>
-      <th>2014-02-20</th>
-      <td>9774.0</td>
-      <td>9837.0</td>
-      <td>9765.0</td>
-      <td>9775.0</td>
-      <td>2.0</td>
-      <td>9775.0</td>
-      <td>160202.0</td>
-      <td>198280.0</td>
-      <td>0.020465</td>
-      <td>-0.020460</td>
+      <th>2019-10-10</th>
+      <td>9343.5</td>
+      <td>9380.5</td>
+      <td>9293.5</td>
+      <td>9301.0</td>
+      <td>34.5</td>
+      <td>9303.5</td>
+      <td>159397.0</td>
+      <td>144474.0</td>
+      <td>-0.369458</td>
+      <td>-0.410601</td>
     </tr>
     <tr>
-      <th>2014-02-21</th>
-      <td>9772.0</td>
-      <td>9776.0</td>
-      <td>9725.0</td>
-      <td>9758.0</td>
-      <td>20.0</td>
-      <td>9755.0</td>
-      <td>103091.0</td>
-      <td>202990.0</td>
-      <td>-0.204604</td>
-      <td>0.020465</td>
+      <th>2019-10-11</th>
+      <td>9308.5</td>
+      <td>9309.0</td>
+      <td>9240.0</td>
+      <td>9267.0</td>
+      <td>52.5</td>
+      <td>9251.0</td>
+      <td>158810.0</td>
+      <td>147471.0</td>
+      <td>-0.564304</td>
+      <td>-0.369458</td>
     </tr>
     <tr>
-      <th>2014-02-24</th>
-      <td>9752.0</td>
-      <td>9789.0</td>
-      <td>9740.0</td>
-      <td>9757.0</td>
-      <td>2.0</td>
-      <td>9757.0</td>
-      <td>90654.0</td>
-      <td>203114.0</td>
-      <td>0.020502</td>
-      <td>-0.204604</td>
+      <th>2019-10-14</th>
+      <td>9259.0</td>
+      <td>9292.0</td>
+      <td>9250.5</td>
+      <td>9261.0</td>
+      <td>14.0</td>
+      <td>9265.0</td>
+      <td>69457.0</td>
+      <td>153902.0</td>
+      <td>0.151335</td>
+      <td>-0.564304</td>
     </tr>
     <tr>
-      <th>2014-02-25</th>
-      <td>9760.0</td>
-      <td>9808.0</td>
-      <td>9744.0</td>
-      <td>9789.0</td>
-      <td>32.0</td>
-      <td>9789.0</td>
-      <td>105498.0</td>
-      <td>201486.0</td>
-      <td>0.327970</td>
-      <td>0.020502</td>
+      <th>2019-10-15</th>
+      <td>9264.5</td>
+      <td>9280.0</td>
+      <td>9216.5</td>
+      <td>9220.0</td>
+      <td>43.5</td>
+      <td>9221.5</td>
+      <td>108342.0</td>
+      <td>151564.0</td>
+      <td>-0.469509</td>
+      <td>0.151335</td>
     </tr>
   </tbody>
 </table>
@@ -552,6 +554,10 @@ X_train.head()
   </thead>
   <tbody>
     <tr>
+      <th>2014-02-18</th>
+      <td>0.409123</td>
+    </tr>
+    <tr>
       <th>2014-02-19</th>
       <td>-0.427829</td>
     </tr>
@@ -566,10 +572,6 @@ X_train.head()
     <tr>
       <th>2014-02-24</th>
       <td>-0.204604</td>
-    </tr>
-    <tr>
-      <th>2014-02-25</th>
-      <td>0.020502</td>
     </tr>
   </tbody>
 </table>
@@ -621,8 +623,8 @@ Results[:20].plot(subplots=True)
 
 
 
-    array([<matplotlib.axes._subplots.AxesSubplot object at 0x7f824e2975d0>,
-           <matplotlib.axes._subplots.AxesSubplot object at 0x7f824d568650>],
+    array([<matplotlib.axes._subplots.AxesSubplot object at 0x7f97c2942a10>,
+           <matplotlib.axes._subplots.AxesSubplot object at 0x7f97c2968a10>],
           dtype=object)
 
 
@@ -647,7 +649,7 @@ rmse = np.sqrt(mse)
 print(f"Out-of-Sample Performance Root Mean Squared Error (RMSE): {rmse}")
 ```
 
-    Out-of-Sample Performance Root Mean Squared Error (RMSE): 0.4154832784856737
+    Out-of-Sample Performance Root Mean Squared Error (RMSE): 0.41545437184712763
 
 
 # In-Sample Performance
@@ -672,7 +674,7 @@ in_sample_rmse = np.sqrt(in_sample_mse)
 print(f"In-of-Sample Performance Root Mean Squared Error (RMSE): {in_sample_rmse}")
 ```
 
-    In-of-Sample Performance Root Mean Squared Error (RMSE): 0.5963660785073426
+    In-of-Sample Performance Root Mean Squared Error (RMSE): 0.5962037920929946
 
 
 # Conclusions
@@ -684,7 +686,7 @@ YOUR CONCLUSIONS HERE!
 print(f"Out-of-Sample Performance Root Mean Squared Error (RMSE): {rmse} is lower than In-of-Sample Performance Root Mean Squared Error (RMSE): {in_sample_rmse} so Out-of-Sample data are more significant")
 ```
 
-    Out-of-Sample Performance Root Mean Squared Error (RMSE): 0.4154832784856737 is lower than In-of-Sample Performance Root Mean Squared Error (RMSE): 0.5963660785073426 so Out-of-Sample data are more significant
+    Out-of-Sample Performance Root Mean Squared Error (RMSE): 0.41545437184712763 is lower than In-of-Sample Performance Root Mean Squared Error (RMSE): 0.5962037920929946 so Out-of-Sample data are more significant
 
 
 
