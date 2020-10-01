@@ -27,7 +27,7 @@ In this exercise, I've test the time-series tools in order to predict future mov
 
 ### Findings:
 
-1. Does this model perform better or worse on out-of-sample data compared to in-sample data? - Out-of-Sample Performance Root Mean Squared Error (RMSE): 0.41545437184712763 is lower than In-of-Sample Performance [Root Mean Square Error](https://www.statisticshowto.com/probability-and-statistics/regression-analysis/rmse-root-mean-square-error/) (RMSE): 0.5962037920929946 so Out-of-Sample data are more significant
+1. Does this model perform better or worse on out-of-sample data compared to in-sample data? - Out-of-Sample Performance [Root Mean Square Error] (https://www.statisticshowto.com/probability-and-statistics/regression-analysis/rmse-root-mean-square-error/) (RMSE): 0.41545437184712763 is lower than In-of-Sample Performance Root Mean Square Error (RMSE): 0.5962037920929946 so Out-of-Sample data are more significant
 
 ## References:
 
