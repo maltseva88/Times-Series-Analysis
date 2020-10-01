@@ -1,5 +1,7 @@
 # Times Series Analysis and Linear Regression Modeling
 
+![IMAGE](image.png) 
+
 In this exercise, I've test the time-series tools in order to predict future movements in the value of the Japanese yen versus the U.S. dollar. I've loaded historical Dollar-Yen exchange rate futures data and applied time series analysis and modeling to determine whether there is any predictable behavior. I've built a Scikit-Learn linear regression model to predict Yen futures ("settle") returns with *lagged* Yen futures returns and categorical calendar seasonal effects (e.g., day-of-week or week-of-year seasonal effects).
 
  #### Time-Series Forecasting notebook completes the following:
