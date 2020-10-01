@@ -31,4 +31,6 @@ In this exercise, I've test the time-series tools in order to predict future mov
 
 ## References:
 https://online.stat.psu.edu/stat510/lesson/11/11.1
+https://scikit-learn.org/stable/modules/linear_model.html
+
 
