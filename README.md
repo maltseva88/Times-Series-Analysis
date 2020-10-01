@@ -4,7 +4,7 @@ In this exercise, I've test the time-series tools in order to predict future mov
 
  #### Time-Series Forecasting notebook completes the following:
 
-1. Decomposition using a Hodrick-Prescott Filter (Decompose the Settle price into trend and noise).
+1. Decomposition using a [Hodrick-Prescott Filter](https://en.wikipedia.org/wiki/Hodrick–Prescott_filter) (Decompose the Settle price into trend and noise).
 2. Forecasting Returns using an ARMA Model.
 3. Forecasting the Settle Price using an ARIMA Model.
 4. Forecasting Volatility with GARCH.
